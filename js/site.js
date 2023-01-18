@@ -4,42 +4,72 @@ function getValues() {
 
     let inputStringLower = inputString.toLowerCase()
 
-    let inputStringLowerNoSpace = inputStringLower.split(" ").join("");
+    let inputStringNoSpace = inputStringLower.split(" ").join("");
 
-    let reversedString = checkforPalindrome(inputStringLowerNoSpace);
+    let inputClean = inputStringNoSpace.replace(/[.,\/#@!$%\^&\*;:{}=\-_`~()]/g, "");
+
+    let reversedString = checkforPalindrome(inputClean);
 
     displayResults(reversedString);
 
 }
 
-//Logic Function
-//Reverse the String
+
 function checkforPalindrome(userString) {
     let revString = '';
 
     // reverse the string
-    for (let i = userString.length - 1; i >= 0; i = i - 1) { // starting value, condition 
+    for (let i = userString.length - 1; i >= 0; i = i - 1) {
         revString += userString[i];
     }
+    // assign palindrome y/n value here???
+    if (revString == userString) {
+        return true;
+    }
 
-    return revString;
+    if (revString != userString) {
+        return false;
+    }
+    //return palindromeT/F ??
+
+    return revString == userString;
 
 }
 
 
-//View Function
+//incorrect or correct pop up w/ results
 function displayResults(revString) {
 
-    document.getElementById('results').textContent = revString;
- 
-    if (revString == inputStringLowerNoSpace) {
+    // THIS IS MESSY BUT IT WORKS SO ITS GOOD FOR NOW 
+
+    let inputString = document.getElementById('userString').value;
+
+    let inputStringLower = inputString.toLowerCase()
+
+    let inputStringNoSpace = inputStringLower.split(" ").join("");
+
+    let inputClean = inputStringNoSpace.replace(/[.,\/#@!$%\^&\*;:{}=\-_`~()]/g, "");
+
+    let reversedString = checkforPalindrome(inputClean);
+
+    document.getElementById('resultsTrue').textContent = inputClean;
+    document.getElementById('resultsFalse').textContent = inputClean;
+
+    if (revString == true) {
 
         document.getElementById('alertCorrect').classList.remove('invisible');
     }
 
-    if (revString != inputStringLowerNoSpace) {
+    if (revString == false) {
 
         document.getElementById('alertIncorrect').classList.remove('invisible');
     }
 
+    if (revString) {
+        // it's true!
+    }
+
+    if (!revString) {
+        // it's false!
+    }
 }
