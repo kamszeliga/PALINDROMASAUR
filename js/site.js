@@ -65,11 +65,11 @@ function displayResults(revString) {
         document.getElementById('alertIncorrect').classList.remove('invisible');
     }
 
-    if (revString) {
-        // it's true!
-    }
+    // if (revString) {
+    //     // it's true!
+    // }
 
-    if (!revString) {
-        // it's false!
-    }
+    // if (!revString) {
+    //     // it's false!
+    // }
 }
