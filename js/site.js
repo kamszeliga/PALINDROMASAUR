@@ -50,18 +50,20 @@ function displayResults(revString) {
 
     let inputClean = inputStringNoSpace.replace(/[.,\/#@!$%\^&\*;:{}=\-_`~()]/g, "");
 
-    let reversedString = checkforPalindrome(inputClean);
+    // let reversedString = checkforPalindrome(inputClean);
 
     document.getElementById('resultsTrue').textContent = inputClean;
     document.getElementById('resultsFalse').textContent = inputClean;
 
     if (revString == true) {
-
+        // alert.classList.remove('alertIncorrect');
+        document.getElementById('alertCorrect').classList.add('invisible');
         document.getElementById('alertCorrect').classList.remove('invisible');
     }
 
     if (revString == false) {
-
+        // alert.classList.remove('alertCorrect');
+        document.getElementById('alertCorrect').classList.add('invisible');
         document.getElementById('alertIncorrect').classList.remove('invisible');
     }
 
