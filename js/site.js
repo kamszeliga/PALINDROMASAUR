@@ -57,7 +57,7 @@ function displayResults(revString) {
 
     if (revString == true) {
         // alert.classList.remove('alertIncorrect');
-        document.getElementById('alertCorrect').classList.add('invisible');
+        document.getElementById('alertIncorrect').classList.add('invisible');
         document.getElementById('alertCorrect').classList.remove('invisible');
     }
 
